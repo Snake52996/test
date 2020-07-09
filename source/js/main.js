@@ -25,16 +25,16 @@ var introduction = {
 		this.scrollNext();
 		window.addEventListener("touchstart", function(e){
 			e.preventDefault();
-			this.listener_helper.startX = e.changedTouches[0].pageX;
-　　　　		this.listener_helper.startY = e.changedTouches[0].pageY;
-		}, false);
+			introduction.listener_helper.startX = e.changedTouches[0].pageX;
+　　　　		introduction.listener_helper.startY = e.changedTouches[0].pageY;
+		}, {passive: false});
 		window.addEventListener("touchend", function(e){
 			e.preventDefault();
-			let moveX = e.changedTouches[0].pageX - this.listener_helper.startX;
-			let moveY = e.changedTouches[0].pageY - this.listener_helper.startY;
-　　　　		if(Math.abs(X) > Math.abs(Y) && X > 0) this.scrollPrevious();
-			else if (Math.abs(X) > Math.abs(Y) && X < 0) this.scrollNext();
-		}, false);
+			let moveX = e.changedTouches[0].pageX - introduction.listener_helper.startX;
+			let moveY = e.changedTouches[0].pageY - introduction.listener_helper.startY;
+　　　　		if(Math.abs(moveX) > Math.abs(moveY) && moveX > 0) introduction.scrollPrevious();
+			else if (Math.abs(moveX) > Math.abs(moveY) && moveX < 0) introduction.scrollNext();
+		}, {passive: false});
 		this.imgs[this.imgs.length - 1].addEventListener("click", this.scrollNext, false);
 	},
 	scrollNext: function(){
