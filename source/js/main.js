@@ -1,6 +1,6 @@
 const config = {
 	img_src: ["b1.png", "b2.png", "b3.png"],
-	main_page_url: "path/to/main"
+	main_page_url: "path/to/main/"
 };
 function addImage(src, dest){
 	let temp_img = document.createElement("img");
